@@ -40,8 +40,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-    # Add RSpec Test Suite
+  # Add RSpec Test Suite
   gem 'rspec-rails', '3.5.0'
+  # Add Rails Controller Testing Gem
+  gem 'rails-controller-testing'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Guard Gems
