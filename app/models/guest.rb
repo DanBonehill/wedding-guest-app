@@ -1,9 +1,9 @@
 class Guest < ApplicationRecord
-  before_validation :capitalize_name, :set_defaults, :set_unique_code, on: :create
+  before_validation :titleize_name, :set_defaults, :set_unique_code, on: :create
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :rsvp, :inclusion => { :in => ["Awaiting RSVP" , "Attending", "Not Attending"] }
-  validates :unique_code, uniqueness: true
+  validates :unique_code, uniqueness: true, length: { is: 6 }
 
   private
 
@@ -11,8 +11,8 @@ class Guest < ApplicationRecord
     self.rsvp = "Awaiting RSVP"
   end
 
-  def capitalize_name
-    self.name = name.capitalize
+  def titleize_name
+    self.name = name.titleize
   end
 
   def set_unique_code

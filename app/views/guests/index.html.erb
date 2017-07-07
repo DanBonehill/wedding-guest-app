@@ -1,6 +1,5 @@
-<p><%= link_to "New Guest", new_guest_path %></p>
 <div class="">
-  <table>
+  <table class="table table-bordered table-hover">
     <tr>
       <th>Name</th>
       <th>RSVP</th>
@@ -12,7 +11,10 @@
         <td><%= guest.name %></td>
         <td><%= guest.rsvp %></td>
         <td><%= guest.unique_code %></td>
-        <td><%= link_to "View", guest_path(guest)%> | <%= link_to "Delete" %></td>
+        <td><%= link_to "View", guest_path(guest), class: "btn btn-primary btn-sm"%>
+            <%= link_to "Delete", guest_path(guest), method: :delete,
+                    data: {confirm: "Are you sure you want to delete this guest?"},
+                    class: "btn btn-danger btn-sm"%></td>
       </tr>
     <% end %>
   </table>

@@ -33,6 +33,8 @@ class GuestsController < ApplicationController
   end
 
   def destroy
+    @guest.destroy
+    redirect_to guests_path
   end
 
   private
