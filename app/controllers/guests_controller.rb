@@ -26,8 +26,9 @@ class GuestsController < ApplicationController
 
   def update
     if @guest.update(guest_params)
-      redirect_to root
+      redirect_to root_path
     else
+      flash[:alert] = "Something went wrong"
       render :edit
     end
   end

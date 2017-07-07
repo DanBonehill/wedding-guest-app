@@ -1,5 +1,9 @@
+<%= render "shared/errors", obj: @guest %>
+<h1>Guest: <%= @guest.name.titleize %></h1>
 <%= form_for @guest do |f| %>
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name, autofocus: true %>
+  <%= f.radio_button(:rsvp, "Attending") %>
+  <%= f.label(:rsvp, "Attending") %>
+  <%= f.radio_button(:rsvp, "Not Attending") %>
+  <%= f.label(:rsvp, "Not Attending") %>
   <%= f.submit %>
 <% end %>
