@@ -1,0 +1,19 @@
+<p><%= link_to "New Guest", new_guest_path %></p>
+<div class="">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>RSVP</th>
+      <th>Unique Code</th>
+      <th>Actions</th>
+    </tr>
+    <% @guests.each do |guest| %>
+      <tr>
+        <td><%= guest.name %></td>
+        <td><%= guest.rsvp %></td>
+        <td><%= guest.unique_code %></td>
+        <td><%= link_to "View", guest_path(guest)%> | <%= link_to "Delete" %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
