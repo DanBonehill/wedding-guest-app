@@ -3,6 +3,9 @@ class GuestsController < ApplicationController
 
   def index
     @guests = Guest.all
+    @attending = Guest.attending
+    @not_attending = Guest.not_attending
+    @awaiting = Guest.awaiting
   end
 
   def show

@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 well">
+    <%= form_tag("/search", method: "post") do %>
+      <div class="form-group">
+        <div class="">
+          <%= text_field_tag(:q, nil, placeholder: "Enter your unique code", class: "form-control") %>
+        </div>
+      </div>
+      <%= submit_tag("Search", class: "btn btn-primary btn-block")%>
+    <% end %>
+  </div>
+</div>

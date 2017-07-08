@@ -5,6 +5,10 @@ class Guest < ApplicationRecord
   validates :rsvp, :inclusion => { :in => ["Awaiting RSVP" , "Attending", "Not Attending"] }
   validates :unique_code, uniqueness: true, length: { is: 6 }
 
+  scope :awaiting, -> { where(rsvp: "Awaiting RSVP") }
+  scope :attending, -> { where(rsvp: "Attending") }
+  scope :not_attending, -> { where(rsvp: "Not Attending") }
+
   private
 
   def set_defaults
