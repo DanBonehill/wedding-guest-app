@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "/search", to: "pages#search"
 
   resources :guests
+  resources :invitations
 end
