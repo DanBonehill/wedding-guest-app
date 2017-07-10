@@ -2,8 +2,8 @@
   <div class="col-md-6 col-md-offset-3 well">
     <%= form_tag("/search", method: "post") do %>
     <%= render "shared/page_title", title: "Welcome" %>
-    <p>To rsvp to Dan & Beth's Wedding on [enter date here] please enter the code on you invitation in the field below.</p>
-    # Img tag with image of invite and code, once done
+    <p>To RSVP to Dan & Beth's Wedding on [enter date here] please enter the code on you invitation in the field below.</p>
+    <!-- Img tag with image of invite and code, once done -->
       <div class="form-group">
         <div class="">
           <%= text_field_tag(:q, nil, placeholder: "Enter your unique code", class: "form-control", autofocus: true) %>
