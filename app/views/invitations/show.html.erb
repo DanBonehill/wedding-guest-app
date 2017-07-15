@@ -1,5 +1,33 @@
-<% @invitation.guests.each do |i| %>
-  <p><%= i.name %></p>
-<% end %>
-<p><%= @invitation.rsvp %></p>
-<%= link_to "Add Guest", new_invitation_guest_path(@invitation) %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 well">
+    <%= render "shared/page_title", title: "Invitation" %>
+    <div class="">
+      <h4><%= pluralize(@invitation.guests.count, "Guest") %>:</h4>
+      <ol>
+        <% @invitation.guests.each do |i| %>
+          <li><%= i.name %></li>
+        <% end %>
+      </ol>
+      <hr>
+    </div>
+    <div class="">
+      <h5>RSVP Status:</h5>
+      <p><%= @invitation.rsvp %></p>
+      <hr>
+    </div>
+    <% if @invitation.email != nil %>
+    <div class="">
+      <h5>Email:</h5>
+      <p><%= @invitation.email %></p>
+      <hr>
+    </div>
+    <% end %>
+    <!-- Add If statement here -->
+    <div class="">
+      <h5>Dietary Requirements:</h5>
+    </div>
+    <div class="">
+      <%= link_to "Add Guest", new_invitation_guest_path(@invitation), class: "btn btn-sm btn-primary" %>
+    </div>
+  </div>
+</div>
