@@ -1,53 +1,40 @@
 class GuestsController < ApplicationController
-  before_action :set_guest, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @guests = Guest.all
-    @attending = Guest.attending
-    @not_attending = Guest.not_attending
-    @awaiting = Guest.awaiting
-  end
-
-  def show
-  end
+  before_action :set_invitation, only: [:create]
+  before_action :set_guest, only: [:destroy]
 
   def new
     @guest = Guest.new
-  end
-
-  def edit
+    @invitation = params[:invitation_id]
   end
 
   def create
     @guest = Guest.new(guest_params)
+    @guest.invitation = @invitation
     if @guest.save
-      redirect_to guests_path
+      flash[:success] = "Guest Added"
+      redirect_to invitations_path
     else
-      render :new
-    end
-  end
-
-  def update
-    if @guest.update(guest_params)
-      redirect_to root_path
-    else
-      flash[:alert] = "Something went wrong"
-      render :edit
+      flash[:danger] = "Guest was not added"
+      redirect_to invitations_path
     end
   end
 
   def destroy
     @guest.destroy
-    redirect_to guests_path
+    redirect_to invitation_path
   end
 
   private
 
   def guest_params
-    params.require(:guest).permit(:name, :rsvp, :unique_code)
+    params.require(:guest).permit(:name)
   end
 
   def set_guest
     @guest = Guest.find(params[:id])
+  end
+
+  def set_invitation
+    @invitation = Invitation.find(params[:invitation_id])
   end
 end

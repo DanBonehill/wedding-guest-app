@@ -1,0 +1,5 @@
+<% @invitation.guests.each do |i| %>
+  <p><%= i.name %></p>
+<% end %>
+<p><%= @invitation.rsvp %></p>
+<%= link_to "Add Guest", new_invitation_guest_path(@invitation) %>

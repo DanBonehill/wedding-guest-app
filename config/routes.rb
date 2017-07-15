@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post "/search", to: "pages#search"
   get "/search", to: "pages#search"
 
-  resources :guests
-  resources :invitations
+  resources :invitations do
+    resources :guests, only: [:new, :create, :destroy]
+  end
 end

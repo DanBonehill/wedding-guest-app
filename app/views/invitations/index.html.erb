@@ -1,0 +1,65 @@
+<%= render "shared/page_title", title: "All Guests" %>
+<div class="new-invitation">
+  <%= link_to "Create New Invitation", invitations_path(@invitation), method: :post,
+              class: "btn btn-primary"%>
+</div>
+<div class="rsvp-buttons">
+  <%= link_to "Attending", "#", class: "btn btn-success btn-sm" %>
+  <%= link_to "Not Attending", "#", class: "btn btn-danger btn-sm" %>
+  <%= link_to "Awaiting RSVP", "#", class: "btn btn-warning btn-sm" %>
+</div>
+<div class="row">
+  <div class="col-md-8">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <tr>
+          <th>Guests Name</th>
+          <th>RSVP</th>
+          <th>RSVP Date</th>
+          <th>Unique Code</th>
+          <th>Actions</th>
+        </tr>
+        <% @invitations.each do |invitation| %>
+          <tr>
+            <td>
+              <% invitation.guests.each do |guest| %>
+                <%= guest.name %></br>
+              <% end %>
+            </td>
+            <td><%= invitation.rsvp %></td>
+            <td><%= invitation.updated_at.strftime("%d/%m/%Y") %></td>
+            <td><%= invitation.unique_code %></td>
+            <td><%= link_to "View", invitation_path(invitation), class: "btn btn-primary btn-sm"%>
+                <%= link_to "Delete", invitation_path(invitation), method: :delete,
+                        data: {confirm: "Are you sure you want to delete this invitation and it's guests?"},
+                        class: "btn btn-danger btn-sm"%></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <table class="table">
+      <tr>
+        <td>Total Invitations Sent</td>
+        <td><%= @invitations.count %></td>
+      </tr>
+      <tr>
+        <td>Total Guests Invited</td>
+        <td><%= @invitations.total_guest_count %></td>
+      </tr>
+      <tr>
+        <td>Total Guests Attending</td>
+        <td><%= @invitations.attending_guest_count %></td>
+      </tr>
+      <tr>
+        <td>Total Guests Not Attending</td>
+        <td><%= @invitations.not_attending_guest_count %></td>
+      </tr>
+      <tr>
+        <td>Total Guests Awaiting RSVP</td>
+        <td><%= @invitations.awaiting_rsvp_guest_count %></td>
+      </tr>
+    </table>
+  </div>
+</div>

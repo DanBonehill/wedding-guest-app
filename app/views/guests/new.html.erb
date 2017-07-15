@@ -2,7 +2,7 @@
   <div class="col-md-6 col-md-offset-3 well">
     <%= render "shared/page_title", title: "New Guest" %>
     <p>Enter the name for the guest you wish to invite:</p>
-    <%= form_for @guest do |f| %>
+    <%= form_for @guest, url: invitation_guests_path do |f| %>
       <div class="form-group">
         <div class="col-md-2 control-label">
           <%= f.label :name, "Name:" %>

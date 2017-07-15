@@ -9,9 +9,9 @@ class PagesController < ApplicationController
   end
 
   def search
-    @guest = Guest.find_by(unique_code: params[:q])
-    if @guest
-      redirect_to edit_guest_path(@guest)
+    @invitation = Invitation.find_by(unique_code: params[:q])
+    if @invitation
+      redirect_to edit_invitation_path(@invitation)
     else
       flash[:danger] = "Invalid unique code"
       render :rsvp
@@ -20,7 +20,7 @@ class PagesController < ApplicationController
 
   private
 
-  def guest_params
-    params.require(:guest).permit(:unique_code)
+  def invitation_params
+    params.require(:invitation).permit(:unique_code)
   end
 end
