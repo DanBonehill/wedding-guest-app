@@ -1,11 +1,9 @@
 class PagesController < ApplicationController
 
   def index
-
   end
 
   def rsvp
-
   end
 
   def search
@@ -16,6 +14,9 @@ class PagesController < ApplicationController
       flash[:danger] = "Invalid unique code"
       render :rsvp
     end
+  end
+
+  def info
   end
 
   private

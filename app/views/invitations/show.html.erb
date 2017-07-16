@@ -22,10 +22,12 @@
       <hr>
     </div>
     <% end %>
-    <!-- Add If statement here -->
+    <% if @invitation.comments != nil %>
     <div class="">
-      <h5>Dietary Requirements:</h5>
+      <h5>Additional Info:</h5>
+      <p><%= @invitation.comments %></p>
     </div>
+    <% end %>
     <div class="">
       <%= link_to "Add Guest", new_invitation_guest_path(@invitation), class: "btn btn-sm btn-primary" %>
     </div>

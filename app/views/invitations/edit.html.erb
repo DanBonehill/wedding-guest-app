@@ -11,12 +11,40 @@
       </ol>
       <hr
     </div>
-    <%= form_for @invitation do |f| %>
-      <%= f.radio_button(:rsvp, "Attending") %>
-      <%= f.label(:rsvp, "Attending") %>
-      <%= f.radio_button(:rsvp, "Not Attending") %>
-      <%= f.label(:rsvp, "Not Attending") %>
-      <%= f.submit %>
-    <% end %>
+    <div>
+      <%= form_for @invitation do |f| %>
+        <div class="">
+          <div class="radio col-md-11 col-md-offset-1">
+            <%= f.radio_button(:rsvp, "Attending") %>
+            <%= f.label(:rsvp, "Attending") %>
+          </div>
+          <div class="radio col-md-11 col-md-offset-1">
+            <%= f.radio_button(:rsvp, "Not Attending") %>
+            <%= f.label(:rsvp, "Not Attending") %>
+          </div>
+        </div>
+        <div class="form-group">
+          <p>If you provide an email address we can send you a reminder closer to the date</p>
+          <div class="control-label col-md-3">
+            <%= f.label(:email, "Email Address:") %>
+          </div>
+          <div class="col-md-9">
+            <%= f.email_field(:email) %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label">
+            <%= f.label(:comments, "Additional Info:") %>
+          </div>
+          <div class="">
+            <%= f.text_area(:comments, rows: 5, class: "form-control") %>
+          </div>
+          <hr>
+        </div>
+        <div class="col-md-4">
+          <%= f.submit("RSVP", class: "btn btn-primary") %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

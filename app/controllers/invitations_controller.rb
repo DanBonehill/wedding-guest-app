@@ -27,7 +27,7 @@ class InvitationsController < ApplicationController
 
   def update
     if @invitation.update(invitation_params)
-      redirect_to root_path
+      redirect_to info_path
     else
       flash[:alert] = "Something went wrong"
       render :edit
@@ -42,14 +42,10 @@ class InvitationsController < ApplicationController
   private
 
   def invitation_params
-    params.require(:invitation).permit(:rsvp, :unique_code, :email)
+    params.require(:invitation).permit(:rsvp, :unique_code, :email, :comments)
   end
 
   def set_invitation
     @invitation = Invitation.find(params[:id])
   end
-
-  #def set_guest
-    #@guest = Guest.find(params[:id])
-  #end
 end
