@@ -1,6 +1,7 @@
 class GuestsController < ApplicationController
   before_action :set_invitation, only: [:create]
   before_action :set_guest, only: [:destroy]
+  before_action :require_user
 
   def new
     @guest = Guest.new

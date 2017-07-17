@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     if @invitation
       redirect_to edit_invitation_path(@invitation)
     else
-      flash[:danger] = "Invalid unique code"
+      flash.now[:danger] = "Invalid unique code"
       render :rsvp
     end
   end

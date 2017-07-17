@@ -1,5 +1,6 @@
 class InvitationsController < ApplicationController
   before_action :set_invitation, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:edit, :update]
 
   def index
     @invitations = Invitation.all
@@ -29,7 +30,7 @@ class InvitationsController < ApplicationController
     if @invitation.update(invitation_params)
       redirect_to info_path
     else
-      flash[:alert] = "Something went wrong"
+      flash.now[:alert] = "Something went wrong"
       render :edit
     end
   end

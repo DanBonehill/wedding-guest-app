@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get "/search", to: "pages#search"
   get "/info", to: "pages#info"
 
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+
   resources :invitations do
     resources :guests, only: [:new, :create, :destroy]
   end
