@@ -17,6 +17,8 @@ class PagesController < ApplicationController
   end
 
   def info
+    @location = "ChIJP9tNyoGOekgRQlIq1rsiwbQ"
+    @api_key = "AIzaSyCv7Ffp5CshQNounyOW5QYuGGYFvY6ag2k"
   end
 
   private
