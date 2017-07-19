@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "pages#index"
+  root to: "pages#rsvp"
 
   get "/rsvp", to: "pages#rsvp"
   post "/search", to: "pages#search"
