@@ -12,6 +12,8 @@ class Invitation < ApplicationRecord
 
   has_many :guests, dependent: :destroy
 
+  default_scope { order("created_at") }
+
   scope :awaiting, -> { where(rsvp: "Awaiting RSVP") }
   scope :attending, -> { where(rsvp: "Attending") }
   scope :not_attending, -> { where(rsvp: "Not Attending") }
