@@ -1,5 +1,52 @@
+<%= render "shared/page_title", title: "Wedding Info" %>
 <div class="row">
-  <div class="col-md-4 col-md-offset-2">
-    <iframe width="400" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:<%= @location %>&key=<%= @api_key %>" allowfullscreen></iframe>
+  <div class="col-md-6">
+    <div class="food">
+      <h3>Food</h3>
+      <p><em>To be confirmed.</em></p>
+      <p>Please let us know if you have any specific dietary requirements</p>
+    </div>
+    <div class="gift">
+      <h3>Gift List</h3>
+      <p>Whilst we by no means expect gifts from anyone attending our wedding, we are aware that a number of people would like the opporunity to bless us in this way.</p>
+      <p>We are currently putting together a John Lewis gift list, this will be available from 17th August 2017. Please check back for the details.</p>
+    </div>
+    <div class="contact">
+      <h3>Contact</h3>
+      <p>
+        You can contact us using any of the below details.
+      </p>
+      <div class="col-md-6">
+        <p>Dan Bonehill</p>
+        <p>
+          <em>Email: danbonehill@me.com</em>
+          <br>
+          <em>Mobile: 07447 921846</em>
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p>Beth Stevenson</p>
+        <p>
+          <em>Email: bethy_boo52@yahoo.co.uk</em>
+          <br>
+          <em>Mobile: 07982 726705</em>
+        </p>
+      </div>
+    </div>
+    <div class="callout">
+      <h3 class="callout-text"><em>We look forward to seeing you all on 28th September and can't wait to celebrate our day with you!</em></h3>
+    </div>
+  </div>
+  <div class="col-md-6 pull-right">
+    <div class="location">
+      <h3 align="center">Location</h3>
+      <iframe width="550" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:<%= @location %>&key=<%= @api_key %>&zoom=13" allowfullscreen></iframe>
+      <div class="pull-right">
+        <h5>For Satnav</h5>
+        <p>
+          The post code is SY13 4PH.<br> When navigating by post code, some navigation systems will direct you to Cloverley Farm. It is best to just follow your SatNav until you reach Calverhall. Then, with the Olde Jack Pub and the Church on your left hand side continue south-east for a further 200m until you reach Cloverley Lodge and the entry gates to Cloverley Hall on your left hand side.<br> The Hall is signposted at the gates, turn left at the Lodge and continue up the tarmac drive for approx 1/2 mile until you reach the hall. Please park in the rear car park. If you should end up at the farm, then return to the village of Calverhall and follow the above directions. On arrival, please follow sign posts to the car park at the rear of the building.
+        </p>
+      </div>
+    </div>
   </div>
 </div>
