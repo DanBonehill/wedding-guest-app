@@ -12,7 +12,11 @@
       <% end %>
     </ol>
     <p>
-      The above are <%= @invitation.rsvp %> your wedding!
+      <% if @invitation.guests.count > 1 %>
+        They are <%= @invitation.rsvp.downcase %> your wedding!
+      <% else %>
+        Is <%= @invitation.rsvp.downcase %> your wedding!
+      <% end %>
     </p>
     <p>
       View the invitation details in full <%= link_to "here.", @url %>
