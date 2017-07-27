@@ -4,9 +4,10 @@
               class: "btn btn-primary"%>
 </div>
 <div class="rsvp-buttons">
-  <%= link_to "Attending", "#", class: "btn btn-success btn-sm" %>
-  <%= link_to "Not Attending", "#", class: "btn btn-danger btn-sm" %>
-  <%= link_to "Awaiting RSVP", "#", class: "btn btn-warning btn-sm" %>
+  <%= link_to "All", invitations_path, class: "btn btn-info btn-sm" %>
+  <%= link_to "Attending", invitations_path(attending: true), class: "btn btn-success btn-sm" %>
+  <%= link_to "Not Attending", invitations_path(not_attending: true), class: "btn btn-danger btn-sm" %>
+  <%= link_to "Awaiting RSVP", invitations_path(awaiting: true), class: "btn btn-warning btn-sm" %>
 </div>
 <div class="row">
   <div class="col-md-8">

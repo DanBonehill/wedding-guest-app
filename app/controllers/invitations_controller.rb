@@ -4,9 +4,9 @@ class InvitationsController < ApplicationController
 
   def index
     @invitations = Invitation.all
-    @attending = Invitation.attending
-    @not_attending = Invitation.not_attending
-    @awaiting = Invitation.awaiting
+    @invitations = Invitation.attending if params[:attending]
+    @invitations = Invitation.not_attending if params[:not_attending]
+    @invitations = Invitation.awaiting if params[:awaiting]
   end
 
   def show
