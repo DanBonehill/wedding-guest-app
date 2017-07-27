@@ -8,7 +8,7 @@
     </div>
     <div class="gift">
       <h3>Gift List</h3>
-      <p>Whilst we by no means expect gifts from anyone attending our wedding, we are aware that a number of people would like the opporunity to bless us in this way.</p>
+      <p>Whilst we by no means expect gifts from anyone attending our wedding, we are aware that a number of people would like the opportunity to bless us in this way.</p>
       <p>We are currently putting together a John Lewis gift list, this will be available from 17th August 2017. Please check back for the details.</p>
     </div>
     <div class="contact">
@@ -40,7 +40,7 @@
   <div class="col-md-6 pull-right">
     <div class="location">
       <h3 align="center">Location</h3>
-      <iframe width="550" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:<%= @location %>&key=<%= @api_key %>&zoom=13" allowfullscreen></iframe>
+      <iframe width="550" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:<%= @location %>&key=<%= ENV["google_maps_key"] %>&zoom=13" allowfullscreen></iframe>
       <div class="pull-right">
         <h5>For Satnav</h5>
         <p>

@@ -29,6 +29,7 @@ class InvitationsController < ApplicationController
   def update
     if @invitation.update(invitation_params)
       redirect_to info_path
+      InvitationMailer.invitation_updated(@invitation).deliver_now
     else
       flash.now[:alert] = "Something went wrong"
       render :edit

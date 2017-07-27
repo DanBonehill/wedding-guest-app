@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>An Invitation has been updated</h1>
+    <h4><%= pluralize(@invitation.guests.count, "Guest") %>:</h4>
+    <ol>
+      <% @invitation.guests.each do |i| %>
+        <li><%= i.name %></li>
+      <% end %>
+    </ol>
+    <p>
+      The above are <%= @invitation.rsvp %> your wedding!
+    </p>
+    <p>
+      View the invitation details in full <%= link_to "here.", @url %>
+    </p>
+  </body>
+</html>
