@@ -10,7 +10,12 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
+  get "/contact", to: "messages#new"
+  post "/contact", to: "messages#create"
+
   resources :invitations do
     resources :guests, only: [:new, :create, :destroy]
   end
+
+  resources :messages, only: [:index, :show]
 end
