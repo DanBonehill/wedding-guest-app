@@ -1,1 +1,26 @@
-<h1>Messages Index</h1>
+<%= render "shared/page_title", title: "All Messages" %>
+<div class="row">
+  <div class="col-md-offset-2">
+    <% @messages.each do |message| %>
+    <div class="col-md-3 message-view">
+        <h5 align="left">From: <%= message.name %></h5>
+        <span>Message recieved <%= message.created_at.strftime("on %a %d/%m/%Y at %H:%M") %></span>
+        <div class="button-container">
+          <% if message.read %>
+          <div class="read-btn">
+            Read
+          </div>
+          <% else %>
+            <div class="unread-btn">
+              Unread
+            </div>
+          <% end %>
+          <div class="pull-right">
+            <%= link_to "Show", message_path(message), class: "btn btn-xs btn-primary" %>
+            <%= link_to "Reply", "#", class: "btn btn-xs btn-info" %>
+          </div>
+        </div>
+    </div>
+    <% end %>
+  </div>
+</div>

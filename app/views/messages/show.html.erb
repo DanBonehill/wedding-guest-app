@@ -1,1 +1,31 @@
-<h1>Show Message</h1>
+<%= render "shared/page_title", title: "#{@message.name}'s Message" %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= link_to "Back", :back, class: "btn btn-primary pull-right" %>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-2">
+        <p><strong>Name:</strong> <%= @message.name %></p>
+      </div>
+      <% if @message.unique_code != nil %>
+        <div class="col-md-3">
+          <p><strong>Unique Code:</strong> <%= @message.unique_code %></p>
+        </div>
+        <% end %>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-2">
+        <p><strong>Email:</strong> <%= @message.email %></p>
+      </div>
+      <% if @message.unique_code != nil %>
+        <div class="col-md-2">
+          <p><%= link_to "View Invitation", invitation_path(@invitation) %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        <p><strong>Content:</strong> <%= @message.content %></p>
+      </div>
+    </div>
+  </div>
+</div>

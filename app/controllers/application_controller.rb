@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :logged_in?
 
+  before_action :unread
+
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
@@ -16,5 +18,9 @@ class ApplicationController < ActionController::Base
       flash[:danger] = "You must be logged in to do that!"
       redirect_to root_path
     end
+  end
+
+  def unread
+    @unread = Message.unread
   end
 end

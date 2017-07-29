@@ -1,1 +1,36 @@
-<h1>Contact Form</h1>
+<%= render "shared/errors", obj: @message %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 well">
+    <%= render "shared/page_title", title: "Contact" %>
+    <%= form_for @message, url: "/contact", :html => {:class => "form-horizontal"} do |f| %>
+      <div class="form-group">
+          <%= f.label(:name, "Name:", class: "control-label col-md-3") %>
+          <div class="col-md-9">
+            <%= f.text_field(:name, class: "form-control") %>
+          </div>
+      </div>
+      <div class="form-group">
+          <%= f.label(:email, "Email Address:", class: "control-label col-md-3") %>
+          <div class="col-md-9">
+            <%= f.email_field(:email, class: "form-control") %>
+          </div>
+      </div>
+      <div class="form-group">
+          <%= f.label(:unique_code, "RSVP Code:", class: "control-label col-md-3") %>
+          <div class="col-md-9">
+            <%= f.text_field(:unique_code, class: "form-control") %>
+          </div>
+      </div>
+      <div class="form-group">
+          <%= f.label(:content, "Message:", class: "control-label col-md-3") %>
+          <div class="col-md-9">
+            <%= f.text_area(:content, rows: 5, class: "form-control") %>
+          </div>
+      </div>
+      <hr>
+      <div class="col-md-4">
+        <%= f.submit("Submit", class: "btn btn-primary") %>
+      </div>
+    <% end %>
+  </div>
+</div>
