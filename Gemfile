@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 # Use figaro to securely configure environmnet variables
 gem "figaro"
+# Use to find timezone of user to display date & time details
+gem 'browser-timezone-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
