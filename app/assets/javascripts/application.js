@@ -20,3 +20,13 @@
 //= require js.cookie
 //= require jstz
 //= require browser_timezone_rails/set_time_zone
+
+// Review code.
+// $('document').ready(function() {
+//   if($('.first-btn').click(function() {
+//     $('#toggle-display').show();
+//   }));
+//   if($('.second-btn').click(function() {
+//     $('#toggle-display').hide();
+//   }));
+// });

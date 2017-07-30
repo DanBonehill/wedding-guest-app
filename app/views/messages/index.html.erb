@@ -7,11 +7,11 @@
         <span>Message recieved <%= message.created_at.strftime("on %a %d/%m/%Y at %H:%M") %></span>
         <div class="button-container">
           <% if message.read %>
-          <div class="read-btn">
+          <div class="read-btn read">
             Read
           </div>
           <% else %>
-            <div class="unread-btn">
+            <div class="read-btn unread">
               Unread
             </div>
           <% end %>

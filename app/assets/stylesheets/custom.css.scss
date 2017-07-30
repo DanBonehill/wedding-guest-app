@@ -19,6 +19,10 @@
   margin-top: 150px;
   color: gray;
 }
+
+.display-none{
+  display:none;
+}
 // Messages Index
 .message-view {
   margin: 10px;
@@ -31,31 +35,34 @@
 }
 .read-btn {
   color: #fff;
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+}
+.read {
   background-color: #5cb85c;
   border-color: #4cae4c;
-  padding: 1px 5px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 3px;
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: normal;
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid transparent;
 }
-.unread-btn {
-  color: #fff;
+.unread {
   background-color: #d9534f;
   border-color: #d43f3a;
-  padding: 1px 5px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 3px;
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: normal;
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid transparent;
 }
+.radio-buttons span.first-btn {
+  margin: 10px 0;
+}
+.radio-buttons span.second-btn {
+  margin: 10px;
+}
+.radio-buttons span label {
+  margin-left: 3px;
+}
+// #toggle-display {
+//   display: none;
+// }

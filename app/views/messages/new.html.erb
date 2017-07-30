@@ -4,28 +4,41 @@
     <%= render "shared/page_title", title: "Contact" %>
     <%= form_for @message, url: "/contact", :html => {:class => "form-horizontal"} do |f| %>
       <div class="form-group">
-          <%= f.label(:name, "Name:", class: "control-label col-md-3") %>
-          <div class="col-md-9">
-            <%= f.text_field(:name, class: "form-control") %>
-          </div>
+        <%= f.label(:name, "Name:", class: "control-label col-md-3") %>
+        <div class="col-md-9">
+          <%= f.text_field(:name, class: "form-control") %>
+        </div>
       </div>
       <div class="form-group">
-          <%= f.label(:email, "Email Address:", class: "control-label col-md-3") %>
-          <div class="col-md-9">
-            <%= f.email_field(:email, class: "form-control") %>
-          </div>
+        <%= f.label(:email, "Email Address:", class: "control-label col-md-3") %>
+        <div class="col-md-9">
+          <%= f.email_field(:email, class: "form-control") %>
+        </div>
       </div>
+      <!-- <div class="col-md-9 col-md-offset-3">
+        <p><strong>Do you have the code from your invitation?</strong></p>
+        <div class="radio-buttons">
+          <span class="first-btn">
+            <%= radio_button_tag(:radio_button, "yes") %>
+            <%= label_tag(:radio_button_yes, "Yes") %>
+          </span>
+          <span class="second-btn">
+            <%= radio_button_tag(:radio_button, "no") %>
+            <%= label_tag(:radio_button_no, "No") %>
+          </span>
+        </div>
+      </div> -->
+      <!-- <div class="form-group" id="toggle-display">
+        <%= f.label(:unique_code, "RSVP Code:", class: "control-label col-md-3") %>
+        <div class="col-md-9">
+          <%= f.text_field(:unique_code, class: "form-control") %>
+        </div>
+      </div> -->
       <div class="form-group">
-          <%= f.label(:unique_code, "RSVP Code:", class: "control-label col-md-3") %>
-          <div class="col-md-9">
-            <%= f.text_field(:unique_code, class: "form-control") %>
-          </div>
-      </div>
-      <div class="form-group">
-          <%= f.label(:content, "Message:", class: "control-label col-md-3") %>
-          <div class="col-md-9">
-            <%= f.text_area(:content, rows: 5, class: "form-control") %>
-          </div>
+        <%= f.label(:content, "Message:", class: "control-label col-md-3") %>
+        <div class="col-md-9">
+          <%= f.text_area(:content, rows: 5, class: "form-control") %>
+        </div>
       </div>
       <hr>
       <div class="col-md-4">
