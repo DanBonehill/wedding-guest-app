@@ -5,7 +5,9 @@
       <h4><%= pluralize(@invitation.guests.count, "Guest") %>:</h4>
       <ol>
         <% @invitation.guests.each do |i| %>
-          <li><%= i.name %></li>
+          <li><%= i.name %> <%= link_to "Delete", invitation_guest_path(i), method: :delete,
+                  data: {confirm: "Are you sure you want to delete this guest?"},
+                  class: "btn btn-danger btn-xs"%></li>
         <% end %>
       </ol>
       <hr>
