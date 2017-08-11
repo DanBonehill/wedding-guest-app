@@ -16,6 +16,7 @@ class MessagesController < ApplicationController
     if @message.save
       flash[:success] = "Thank you for your message. We'll be in touch shortly."
       redirect_to info_path
+      MessageMailer.message_received(@message).deliver_now
     else
       flash.now[:danger] = "Something went wrong"
       render :new
