@@ -17,5 +17,5 @@ Rails.application.routes.draw do
     resources :guests, only: [:new, :create, :destroy]
   end
 
-  resources :messages, only: [:index, :show]
+  resources :messages, only: [:index, :show, :destroy]
 end

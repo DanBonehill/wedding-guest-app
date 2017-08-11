@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show]
+  before_action :set_message, only: [:show, :destroy]
   before_action :require_user, only: [:index, :show]
 
   def index
@@ -25,6 +25,11 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+  end
+
+  def destroy
+    @message.destroy
+    redirect_to messages_path
   end
 
   private
