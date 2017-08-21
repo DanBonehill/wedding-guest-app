@@ -4,17 +4,18 @@
     <div class="food">
       <h3>Food</h3>
       <p><em>To be confirmed.</em></p>
-      <p>Please let us know if you have any specific dietary requirements.</p>
+      <p><%= link_to "Please let us know if you have any specific dietary requirements.", contact_path %></p>
     </div>
     <div class="gift">
       <h3>Gift List</h3>
       <p>Whilst we by no means expect gifts from anyone attending our wedding, we are aware that a number of people would like the opportunity to bless us in this way.</p>
-      <p>We are currently putting together a John Lewis gift list, this will be available from 17th August 2017. Please check back for the details.</p>
+      <p>We have put together a John Lewis gift list, this can be found <a href="https://www.johnlewisgiftlist.com/giftint/JSPs/GiftList/BuyGifts/GuestFindAList.jsp" target="_blank">here.</a></p>
+      <p>Please enter our gift list code of <strong>716578</strong>, there is no password.</p>
     </div>
     <div class="contact">
       <h3>Contact</h3>
       <p>
-        You can contact us using any of the below details.
+        You can contact us through the website <%= link_to "here", contact_path %>, or by using any of the below details.
       </p>
       <div class="col-md-6">
         <p>Dan Bonehill</p>
